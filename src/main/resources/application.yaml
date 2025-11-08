@@ -7,3 +7,6 @@ spring:
     password: Fanap2226!
   jpa:
     show-sql: true
+
+  jwt:
+    secret: ${JWT_SECRET}
