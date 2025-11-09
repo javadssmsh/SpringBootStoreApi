@@ -1,11 +1,8 @@
 package com.codewithmosh.store.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -28,16 +25,15 @@ public class Order {
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private String status;
+    private OrderStatus status;
 
-    @Column(name = "created_at", updatable = false,insertable = false)
+    @Column(name = "created_at", updatable = false, insertable = false)
     private LocalDateTime createdAt;
 
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany
-    @JoinColumn(name = "order_id")
-    private Set<OderItem> items = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
+    private Set<OrderItem> items = new LinkedHashSet<>();
 
 }

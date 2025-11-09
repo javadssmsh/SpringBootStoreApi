@@ -10,7 +10,7 @@ create table orders
         foreign key (customer_id) references users (id)
 );
 
-create table oder_items
+create table order_items
 (
     id          bigint auto_increment
         primary key,
