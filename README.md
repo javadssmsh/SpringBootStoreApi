@@ -12,8 +12,4 @@ You’ll be cloning this repository and coding along with me as we extend the pr
 
 To get started, clone the repository to your local machine:
 
-```sh
-git clone https://github.com/mosh-hamedani/spring-api-starter
 
-cd spring-api
-```
